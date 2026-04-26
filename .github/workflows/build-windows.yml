@@ -17,17 +17,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: '22'
+
+      - name: Enable Corepack (Yarn 4)
+        run: corepack enable
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Build Svelte app
         run: yarn build
 
       - name: Package Electron app
-        run: npx electron-builder --win --x64
+        run: yarn electron-builder --win --x64
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

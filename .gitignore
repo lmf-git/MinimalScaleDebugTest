@@ -1,4 +1,7 @@
 node_modules
+.yarn/
+.claude/
+.vscode/
 
 # Output
 .output
