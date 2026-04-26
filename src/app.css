@@ -1,0 +1,278 @@
+/* ============================================================
+   AaltoSansEssential — primary UI font (full weight range)
+   ============================================================ */
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-thin.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-thinit.otf') format('opentype');
+  font-weight: 100; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-ultralight.otf') format('opentype');
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-ultralightit.otf') format('opentype');
+  font-weight: 200; font-style: italic; font-display: swap;
+}
+/* No light upright in this family — italic only */
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-lightit.otf') format('opentype');
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-regularit.otf') format('opentype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-mediumit.otf') format('opentype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-semibold.otf') format('opentype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-semiboldit.otf') format('opentype');
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-boldit.otf') format('opentype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssential';
+  src: url('/fonts/aaltosansessential-blackit.otf') format('opentype');
+  font-weight: 900; font-style: italic; font-display: swap;
+}
+
+/* ============================================================
+   AaltoSansEssentialAlt — alternate optical variant
+   ============================================================ */
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-thin.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-thinit.otf') format('opentype');
+  font-weight: 100; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-ultralight.otf') format('opentype');
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-ultralightit.otf') format('opentype');
+  font-weight: 200; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-lightit.otf') format('opentype');
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-regularit.otf') format('opentype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-mediumit.otf') format('opentype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-semibold.otf') format('opentype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-semiboldit.otf') format('opentype');
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-boldit.otf') format('opentype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansEssentialAlt';
+  src: url('/fonts/aaltosansessentialalt-blackit.otf') format('opentype');
+  font-weight: 900; font-style: italic; font-display: swap;
+}
+
+/* ============================================================
+   AaltoSansPro — missing upright faces for most weights
+   (italic-only for 100, 200, 400, 500, 600; upright for 300, 700)
+   ============================================================ */
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-thinit.otf') format('opentype');
+  font-weight: 100; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-ultralightit.otf') format('opentype');
+  font-weight: 200; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-lightit.otf') format('opentype');
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-regularit.otf') format('opentype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-mediumit.otf') format('opentype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-semiboldit.otf') format('opentype');
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AaltoSansPro';
+  src: url('/fonts/aaltosanspro-boldit.otf') format('opentype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+/* ============================================================
+   AlvarEssential — upright only (no italics in the set)
+   ============================================================ */
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-thin.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-ultralight.otf') format('opentype');
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-semibold.otf') format('opentype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'AlvarEssential';
+  src: url('/fonts/alvaressential-black.otf') format('opentype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* ============================================================
+   AlvarPro — single file (black italic only)
+   ============================================================ */
+@font-face {
+  font-family: 'AlvarPro';
+  src: url('/fonts/alvarpro-blackit.otf') format('opentype');
+  font-weight: 900; font-style: italic; font-display: swap;
+}
+
+/* ============================================================
+   Base reset
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #020617;
+  color: #e2e8f0;
+  font-family: 'AaltoSansEssential', system-ui, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
