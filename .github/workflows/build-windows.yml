@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -28,8 +31,8 @@ jobs:
       - name: Build Svelte app
         run: yarn build
 
-      - name: Package Electron app
-        run: yarn electron-builder --win --x64
+      - name: Package and publish Electron app
+        run: yarn electron-builder --win --x64 --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
