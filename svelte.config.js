@@ -14,6 +14,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
+			base: '',
 			relative: true
 		}
 	}
