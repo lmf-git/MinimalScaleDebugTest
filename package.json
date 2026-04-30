@@ -1,7 +1,7 @@
 {
 	"name": "svelteelectrontest",
 	"private": true,
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"type": "module",
 	"packageManager": "yarn@4.14.1",
 	"repository": {
@@ -13,8 +13,7 @@
 		"dev": "vite dev",
 		"electron:start": "electron .",
 		"app:dev": "concurrently \"vite dev\" \"wait-on http://localhost:5173 && electron .\"",
-		"build": "vite build && yarn postbuild",
-		"postbuild": "node -e \"const fs=require('fs'); let h=fs.readFileSync('build/index.html','utf8'); h=h.replace(/(src|href)=\\\"\\//g, '$1=\\\"./'); fs.writeFileSync('build/index.html',h);\"",
+		"build": "vite build",
 		"package": "yarn build && electron-builder",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
