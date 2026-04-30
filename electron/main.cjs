@@ -1,8 +1,9 @@
-const { app, BrowserWindow, ipcMain, shell, session } = require('electron'); // session kept for cache clearing
+const { app, BrowserWindow, ipcMain, shell, session, dialog } = require('electron'); // session kept for cache clearing
 const path = require('path');
 const fs = require('fs');
 const { SerialPort } = require('serialport');
 const { usb } = require('usb');
+const { autoUpdater } = require('electron-updater');
 
 const isDev = !app.isPackaged;
 let mainWindow;
@@ -256,12 +257,38 @@ app.whenReady().then(async () => {
   if (isDev) {
     await session.defaultSession.clearCache();
     await session.defaultSession.clearStorageData({ storages: ['serviceworkers'] });
+  } else {
+    autoUpdater.checkForUpdatesAndNotify();
   }
 
   logPath = path.join(app.getPath('userData'), 'scale_debug_raw.log');
   logStream = fs.createWriteStream(logPath, { flags: 'a' });
   writeLog(`\n=== Session Start: ${new Date().toISOString()} ===`);
   createWindow();
+});
+
+// --- Auto Updater Events ---
+
+autoUpdater.on('update-available', () => {
+  writeLog(`[${new Date().toISOString()}] Update available.`);
+});
+
+autoUpdater.on('update-downloaded', (info) => {
+  writeLog(`[${new Date().toISOString()}] Update downloaded; version ${info.version}`);
+  dialog.showMessageBox({
+    type: 'info',
+    title: 'Update Ready',
+    message: `A new version (${info.version}) has been downloaded. The app will restart to apply the update.`,
+    buttons: ['Restart', 'Later']
+  }).then((result) => {
+    if (result.response === 0) {
+      autoUpdater.quitAndInstall();
+    }
+  });
+});
+
+autoUpdater.on('error', (err) => {
+  writeLog(`[${new Date().toISOString()}] Updater error: ${err.message}`);
 });
 
 app.on('window-all-closed', () => {
