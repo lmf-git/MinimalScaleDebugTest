@@ -1,4 +1,8 @@
-const { app, BrowserWindow, ipcMain, shell, session, dialog, protocol, net } = require('electron'); // session kept for cache clearing
+const { app, BrowserWindow, ipcMain, shell, session, dialog, protocol, net } = require('electron');
+
+protocol.registerSchemesAsPrivileged([
+  { scheme: 'app', privileges: { secure: true, standard: true, supportFetchAPI: true } }
+]);
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
@@ -65,7 +69,7 @@ function createWindow() {
     });
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadURL('app://index.html');
+    mainWindow.loadURL('app://localhost');
   }
 }
 
@@ -258,8 +262,9 @@ app.whenReady().then(async () => {
   // Register custom protocol to handle absolute paths in production
   if (!isDev) {
     protocol.handle('app', (request) => {
-      const filePath = request.url.slice('app://'.length);
-      const resolvedPath = path.join(__dirname, '../build', filePath || 'index.html');
+      const { pathname } = new URL(request.url);
+      const filePath = pathname === '/' ? 'index.html' : pathname.slice(1);
+      const resolvedPath = path.join(__dirname, '../build', filePath);
       return net.fetch(url.pathToFileURL(resolvedPath).toString());
     });
   }
