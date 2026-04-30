@@ -1,9 +1,13 @@
 {
 	"name": "svelteelectrontest",
 	"private": true,
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"type": "module",
 	"packageManager": "yarn@4.14.1",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lmf-git/MinimalScaleDebugTest.git"
+	},
 	"main": "electron/main.cjs",
 	"scripts": {
 		"dev": "vite dev",
@@ -33,6 +37,13 @@
 	"build": {
 		"appId": "com.estremar.scaledebug",
 		"productName": "Scale Debug",
+		"publish": [
+			{
+				"provider": "github",
+				"owner": "lmf-git",
+				"repo": "MinimalScaleDebugTest"
+			}
+		],
 		"files": [
 			"build/**/*",
 			"electron/**/*.cjs",
