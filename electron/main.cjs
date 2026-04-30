@@ -1,6 +1,7 @@
-const { app, BrowserWindow, ipcMain, shell, session, dialog } = require('electron'); // session kept for cache clearing
+const { app, BrowserWindow, ipcMain, shell, session, dialog, protocol, net } = require('electron'); // session kept for cache clearing
 const path = require('path');
 const fs = require('fs');
+const url = require('url');
 const { SerialPort } = require('serialport');
 const { usb } = require('usb');
 const { autoUpdater } = require('electron-updater');
@@ -64,7 +65,7 @@ function createWindow() {
     });
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
+    mainWindow.loadURL('app://index.html');
   }
 }
 
@@ -254,6 +255,15 @@ function stopActiveConnection() {
 // --- App Lifecycle ---
 
 app.whenReady().then(async () => {
+  // Register custom protocol to handle absolute paths in production
+  if (!isDev) {
+    protocol.handle('app', (request) => {
+      const filePath = request.url.slice('app://'.length);
+      const resolvedPath = path.join(__dirname, '../build', filePath || 'index.html');
+      return net.fetch(url.pathToFileURL(resolvedPath).toString());
+    });
+  }
+
   if (isDev) {
     await session.defaultSession.clearCache();
     await session.defaultSession.clearStorageData({ storages: ['serviceworkers'] });
