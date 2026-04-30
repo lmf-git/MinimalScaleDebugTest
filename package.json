@@ -1,7 +1,7 @@
 {
 	"name": "svelteelectrontest",
 	"private": true,
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"type": "module",
 	"packageManager": "yarn@4.14.1",
 	"repository": {
@@ -67,6 +67,25 @@
 					]
 				}
 			]
+		},
+		"mac": {
+			"target": [
+				{
+					"target": "dmg",
+					"arch": [
+						"x64",
+						"arm64"
+					]
+				},
+				{
+					"target": "zip",
+					"arch": [
+						"x64",
+						"arm64"
+					]
+				}
+			],
+			"category": "public.app-category.developer-tools"
 		},
 		"nsis": {
 			"oneClick": false,

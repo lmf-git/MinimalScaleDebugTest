@@ -1,4 +1,4 @@
-name: Build Windows
+name: Build & Release
 
 on:
   push:
@@ -14,7 +14,11 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
 
     steps:
       - name: Checkout
@@ -38,14 +42,24 @@ jobs:
         run: ls -R build
 
       - name: Package and publish Electron app
-        run: yarn electron-builder --win --x64 --publish always
+        run: yarn electron-builder --${{ matrix.os == 'windows-latest' && 'win' || 'mac' }} --${{ matrix.os == 'windows-latest' && 'x64' || 'universal' }} --publish always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload artifacts
+      - name: Upload artifacts (Windows)
+        if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: Scale-Debug-Windows-${{ github.ref_name }}
           path: dist/*.exe
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload artifacts (macOS)
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Scale-Debug-MacOS-${{ github.ref_name }}
+          path: dist/*.dmg
           if-no-files-found: error
           retention-days: 30
